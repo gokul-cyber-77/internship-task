@@ -1,0 +1,24 @@
+## Results
+
+The Nmap scan successfully identified the target host (**192.1xx.xx.1**) as active on the network. A total of **1000 TCP ports** were scanned, of which **3 ports were open** and **997 ports were filtered**.
+
+The scan detected the following open services:
+
+| Port | Service                 | Status |
+| ---- | ----------------------- | ------ |
+| 135  | MSRPC                   | Open   |
+| 139  | NetBIOS Session Service | Open   |
+| 445  | Microsoft-DS (SMB)      | Open   |
+
+### Analysis
+
+* The target host responded successfully, confirming it is online.
+* The open ports correspond to common Microsoft Windows networking services.
+* Port **135** is used for Microsoft Remote Procedure Call (MSRPC).
+* Port **139** supports NetBIOS Session Service, commonly used for legacy file and printer sharing.
+* Port **445** provides Server Message Block (SMB) services for file sharing and remote administration.
+* The remaining **997 TCP ports** were filtered, indicating that access to those ports is restricted by a firewall or network filtering mechanism.
+
+### Conclusion
+
+The scan results suggest that the target machine is likely running a Windows operating system with essential network services enabled. The limited number of exposed ports and the presence of filtered ports indicate that the system has basic network security measures in place. This scan demonstrates the effectiveness of Nmap in identifying active hosts and enumerating accessible network services during the reconnaissance phase of a security assessment.
